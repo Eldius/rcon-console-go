@@ -1,0 +1,47 @@
+name: Go
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Set up Go 1.14
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.14
+      id: go
+
+    - name: Build for Linux
+      run: cd GOOS=linux GOARCH=amd64 go build -o bin/rcon-console.linux.amd64
+
+    - name: Build for Windows
+      run: cd GOOS=windows GOARCH=amd64 go build -o bin/rcon-console.windows.amd64.exe
+
+    - name: Build for Darwin
+      run: cd GOOS=darwin GOARCH=amd64 go build -o bin/rcon-console.darwin.amd64
+
+    - name: Upload artifact Linux
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: rcon-console.linux.amd64
+        # Directory containing files to upload
+        path: bin/
+
+    - name: Upload artifact Linux
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name Windows
+        name: rcon-console.windows.amd64
+        # Directory containing files to upload
+        path: bin/
+
+    - name: Upload artifact Linux
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name Darwin
+        name: rcon-console.darwin.amd64
+        # Directory containing files to upload
+        path: bin/
