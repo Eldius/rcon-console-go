@@ -14,13 +14,13 @@ jobs:
       id: go
 
     - name: Build for Linux
-      run: cd GOOS=linux GOARCH=amd64 go build -o bin/rcon-console.linux.amd64
+      run: GOOS=linux GOARCH=amd64 go build -o bin/rcon-console.linux.amd64
 
     - name: Build for Windows
-      run: cd GOOS=windows GOARCH=amd64 go build -o bin/rcon-console.windows.amd64.exe
+      run: GOOS=windows GOARCH=amd64 go build -o bin/rcon-console.windows.amd64.exe
 
     - name: Build for Darwin
-      run: cd GOOS=darwin GOARCH=amd64 go build -o bin/rcon-console.darwin.amd64
+      run: GOOS=darwin GOARCH=amd64 go build -o bin/rcon-console.darwin.amd64
 
     - name: Upload artifact Linux
       uses: actions/upload-artifact@v1.0.0
