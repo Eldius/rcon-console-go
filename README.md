@@ -1,2 +1,5 @@
-# Go 1.4 Gitpod template #
-A Template to use Go 1.4 at Gitpod
+
+# rcon-console-go #
+A simple RCON CLI implementation
+
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Eldius/rcon-console-go) 
