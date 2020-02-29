@@ -46,7 +46,7 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name Windows
-        name: rcon-console.windows.amd64
+        name: rcon-console.windows.amd64.exe
         # Directory containing files to upload
         path: bin/
 
